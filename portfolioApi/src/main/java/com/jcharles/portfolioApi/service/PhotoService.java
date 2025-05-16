@@ -17,10 +17,10 @@ public class PhotoService {
   }
 
   /**
-   * Get all albums name
-   * @return A list of all albums name
+   * Get all photos metadata
+   * @return A list of all photos metadata
    */
-  public List<Photo> getPhotos() {
+  public List<Photo> getAllPhotos() {
     return photoRepository.findAll();
   }
 }
