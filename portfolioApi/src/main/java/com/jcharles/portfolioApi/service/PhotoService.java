@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.jcharles.portfolioApi.dto.PhotoMetadataDto;
 import com.jcharles.portfolioApi.model.Photo;
 import com.jcharles.portfolioApi.repository.PhotoRepository;
 
@@ -22,5 +23,9 @@ public class PhotoService {
    */
   public List<Photo> getAllPhotos() {
     return photoRepository.findAll();
+  }
+
+  public addPhoto(PhotoMetadataDto photoMetadata){
+    
   }
 }

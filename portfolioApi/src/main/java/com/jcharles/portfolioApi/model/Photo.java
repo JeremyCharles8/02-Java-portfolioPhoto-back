@@ -17,6 +17,7 @@ import lombok.Data;
 @Entity
 @Table(name = "photo_metadata")
 public class Photo {
+  
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
