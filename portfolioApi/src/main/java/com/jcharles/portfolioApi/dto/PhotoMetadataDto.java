@@ -22,5 +22,5 @@ public class PhotoMetadataDto {
   @Size(max = 300)
   private String caption;
 
-  private Integer album;
+  private Integer albumId;
 }

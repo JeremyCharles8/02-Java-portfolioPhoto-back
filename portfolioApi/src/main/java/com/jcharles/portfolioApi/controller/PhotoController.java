@@ -56,7 +56,8 @@ public class PhotoController {
     try {
       PhotoMetadataDto photoMetadata = new ObjectMapper()
         .readValue(metadataJson, PhotoMetadataDto.class);
-      photoService.addPhoto(photoMetadata);
+
+      photoService.addPhoto(photoMetadata, file);
 
       return ResponseEntity.ok("Photo added successfully");
     } catch (Exception e) {
