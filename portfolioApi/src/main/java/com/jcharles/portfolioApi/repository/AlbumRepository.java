@@ -7,5 +7,6 @@ import com.jcharles.portfolioApi.model.Album;
 
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Long> {
- 
+
+  boolean existsByName (String name);
 }
