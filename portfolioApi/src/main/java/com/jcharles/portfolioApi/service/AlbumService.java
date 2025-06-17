@@ -27,16 +27,16 @@ public class AlbumService {
   }
 
   /**
-   * 
-   * @param albumName
-   * @throws IOException
+   * Create new album in database
+   * @param albumToCreate Album's data
+   * @throws IOException Album's name already exists
    */
   public void addAlbum (AlbumDto albumToCreate) throws IOException {
     String albumName = albumToCreate.getName();
     if (albumRepository.existsByName(albumName)) {
       throw new IllegalArgumentException("Album's name already exists");
     }
-    
+
     Album album = new Album();
     album.setName(albumName);
     albumRepository.save(album);

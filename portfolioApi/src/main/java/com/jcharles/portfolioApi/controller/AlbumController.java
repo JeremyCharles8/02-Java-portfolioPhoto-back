@@ -38,7 +38,6 @@ public class AlbumController {
    * Endpoint to add a new album in database
    * @param album JSON containing album's data
    * @return 200 - Album created successfully
-   * @throws IOException
    */
   @PostMapping("/album")
   public ResponseEntity<String> createAlbum(

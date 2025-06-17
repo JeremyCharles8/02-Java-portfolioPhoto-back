@@ -35,9 +35,11 @@ public class PhotoService {
   }
 
   /**
-   * Upload original photo and her thumbnail on cloudinary, stock photo's data in database
+   * Upload original photo and her thumbnail on cloudinary, create photo in database
    * @param photoMetadata Photo's data
    * @param file Photo file
+   * @throws IOException Title already exists
+   * @throws IOException FileName already exists
    */
   public void addPhoto(PhotoMetadataDto photoMetadata, MultipartFile file) throws IOException {
     if (photoRepository.existsByTitle(photoMetadata.getTitle())) {

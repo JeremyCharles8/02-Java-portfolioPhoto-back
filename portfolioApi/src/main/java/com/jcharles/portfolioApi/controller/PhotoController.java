@@ -31,7 +31,6 @@ public class PhotoController {
    * GET
    * Endpoint to get all photos metadata
    * @return ResponseEntity<List<Photo>> 200 A list containing all photos metadata
-   * @return ResponseEntity 500 - Internal server Error
    */
   @GetMapping("/photos")
   public ResponseEntity<?> getAllPhotos() {
@@ -46,7 +45,6 @@ public class PhotoController {
    * @param file Photo file
    * @param metadataJson JSON string containing photo informations
    * @return ResponseEntity 200 - Photo added successfully
-   * @return ResponseEntity 500 - Internal server error
    */
   @PostMapping("/photo")
   public ResponseEntity<String> createPhoto(
