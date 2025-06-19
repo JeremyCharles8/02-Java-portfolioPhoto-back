@@ -26,7 +26,7 @@ public class ErrorHandler {
   }
 
   @ExceptionHandler(IllegalArgumentException.class)
-  public ResponseEntity<String> handleIntegrity(IllegalArgumentException e) {
+  public ResponseEntity<String> handleIntegrityError(IllegalArgumentException e) {
     String errorMessage = e.getMessage();
     
     return ResponseEntity.status(HttpStatus.CONFLICT).body(errorMessage);

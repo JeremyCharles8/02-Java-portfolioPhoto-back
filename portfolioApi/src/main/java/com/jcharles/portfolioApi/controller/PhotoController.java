@@ -33,8 +33,8 @@ public class PhotoController {
    * @return ResponseEntity<List<Photo>> 200 A list containing all photos metadata
    */
   @GetMapping("/photos")
-  public ResponseEntity<?> getAllPhotos() {
-    List<Photo> photos = photoService.getAllPhotos();
+  public ResponseEntity<?> getAll() {
+    List<Photo> photos = photoService.getAll();
 
     return ResponseEntity.ok(photos);
   }
@@ -47,14 +47,14 @@ public class PhotoController {
    * @return ResponseEntity 200 - Photo added successfully
    */
   @PostMapping("/photo")
-  public ResponseEntity<String> createPhoto(
+  public ResponseEntity<String> create(
     @RequestParam("file") MultipartFile file,
     @Valid @RequestBody PhotoMetadataDto photoMetadata
   ) throws IOException {
     // PhotoMetadataDto photoMetadata = new ObjectMapper()
     //   .readValue(metadataJson, PhotoMetadataDto.class);
 
-    photoService.addPhoto(photoMetadata, file);
+    photoService.create(photoMetadata, file);
 
     return ResponseEntity.ok("Photo added successfully");
   }

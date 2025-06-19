@@ -30,7 +30,7 @@ public class PhotoService {
    * Get all photos metadata
    * @return A list of all photos metadata
    */
-  public List<Photo> getAllPhotos() {
+  public List<Photo> getAll() {
     return photoRepository.findAll();
   }
 
@@ -41,7 +41,7 @@ public class PhotoService {
    * @throws IOException Title already exists
    * @throws IOException FileName already exists
    */
-  public void addPhoto(PhotoMetadataDto photoMetadata, MultipartFile file) throws IOException {
+  public void create(PhotoMetadataDto photoMetadata, MultipartFile file) throws IOException {
     if (photoRepository.existsByTitle(photoMetadata.getTitle())) {
       throw new IllegalArgumentException("Title already exists");
     }
